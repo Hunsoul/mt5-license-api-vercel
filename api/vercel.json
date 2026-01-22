@@ -1,0 +1,43 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/**/*.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/health",
+      "dest": "/api/health.py"
+    },
+    {
+      "src": "/api/auth/login",
+      "dest": "/api/auth/login.py"
+    },
+    {
+      "src": "/api/auth/verify",
+      "dest": "/api/auth/verify.py"
+    },
+    {
+      "src": "/api/license/activate",
+      "dest": "/api/license/activate.py"
+    },
+    {
+      "src": "/api/license/verify",
+      "dest": "/api/license/verify.py"
+    },
+    {
+      "src": "/api/license/deactivate",
+      "dest": "/api/license/deactivate.py"
+    },
+    {
+      "src": "/api/license/reset-hwid",
+      "dest": "/api/license/reset-hwid.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.py"
+    }
+  ]
+}

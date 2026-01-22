@@ -1,0 +1,72 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/**/*.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.js",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.css",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/api/health",
+      "dest": "/api/health.py"
+    },
+    {
+      "src": "/api/auth/login",
+      "dest": "/api/auth/login.py"
+    },
+    {
+      "src": "/api/auth/verify",
+      "dest": "/api/auth/verify.py"
+    },
+    {
+      "src": "/api/license/activate",
+      "dest": "/api/license/activate.py"
+    },
+    {
+      "src": "/api/license/verify",
+      "dest": "/api/license/verify.py"
+    },
+    {
+      "src": "/api/license/deactivate",
+      "dest": "/api/license/deactivate.py"
+    },
+    {
+      "src": "/api/license/reset-hwid",
+      "dest": "/api/license/reset-hwid.py"
+    },
+    {
+      "src": "/(.*\\.(html|js|css|json|jpg|png|gif|svg|ico|woff|woff2|ttf))",
+      "dest": "/$1"
+    },
+    {
+      "src": "/(.+)",
+      "dest": "/index.html"
+    }
+  ],
+  "env": {
+    "SUPABASE_URL": "@supabase_url",
+    "SUPABASE_KEY": "@supabase_key",
+    "SECRET_KEY": "@secret_key",
+    "SMTP_SERVER": "@smtp_server",
+    "SMTP_PORT": "@smtp_port",
+    "SENDER_EMAIL": "@sender_email",
+    "SENDER_PASSWORD": "@sender_password"
+  }
+}
