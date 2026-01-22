@@ -1,0 +1,22 @@
+# Vercel ignore file
+node_modules/
+.git/
+.env
+.env.local
+.DS_Store
+*.log
+.vscode/
+.idea/
+.pre-commit-config.yaml
+docker-compose.yml
+Dockerfile
+.eslintrc.json
+.prettierrc
+SETUP.md
+GITHUB_PUSH.md
+QUICKSTART_GITHUB.md
+LICENSE
+README_COMPLETE.md
+README.md.txt
+Procfile.txt
+runtime.txt.txt
